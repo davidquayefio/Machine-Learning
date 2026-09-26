@@ -85,7 +85,8 @@ def save_trial_plots(trials, output_dir):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("C:/Users/user/Desktop/Hyperparameter/data/train.csv")
+    train_path = Path(__file__).resolve().parents[1] / "data" / "train.csv"
+    df = pd.read_csv(train_path)
 
     X = df.drop("price_range", axis=1).values
     y = df.price_range.values
